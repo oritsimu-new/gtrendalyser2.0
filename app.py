@@ -7,7 +7,7 @@ from io import BytesIO
 st.set_page_config(page_title="The G-Trendalyser", layout="centered")
 
 # --- Title & intro
-st.title("The G-Trendalyser 🐍🔥")
+st.title("The G-Trendalyser 2.0🐍🔥")
 st.subheader("Discover your Top & Rising Google Trends⚡")
 st.markdown(
     """by Orit Mutznik, @oritsimu-new, @oritsimu"""
