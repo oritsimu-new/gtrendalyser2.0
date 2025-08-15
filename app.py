@@ -23,7 +23,7 @@ To get started:
 - Hit **Get Trends! 🤘**
 - Wait for a few moments⏳ (the longer the timeframe, the longer it takes)
 - Scroll through the restuls tables (optional)📈
-- Export your results in xlsx or csv format📊 or scroll down to the bottom to copy everything to clipboard📋
+- Export your results in xlsx or csv format📊 or scroll down to the bottom to copy everything to clipboard
 - **If you get an error, this is probably due to too many requests. Refresh the browser and you're good to go!🤘**
 
 Each keyword can return up to **25 Top** and **25 Rising** related queries.
