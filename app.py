@@ -7,7 +7,7 @@ from io import BytesIO
 st.set_page_config(page_title="The G-Trendalyser", layout="centered")
 
 # --- Title & intro
-st.title("The G-Trendalyser 2.0🐍🔥")
+st.title("The G-Trendalyser 🐍🔥")
 st.subheader("Discover your Top & Rising Google Trends⚡")
 st.markdown(
     """by Orit Mutznik, @oritsimu-new, @oritsimu"""
@@ -23,7 +23,8 @@ To get started:
 - Hit **Get Trends! 🤘**
 - Wait for a few moments⏳ (the longer the timeframe, the longer it takes)
 - Scroll through the restuls tables (optional)📈
-- Export your results in xlsx or csv format📊
+- Export your results in xlsx or csv format📊 or scroll down to the bottom to copy everything to clipboard📋
+- **If you get an error, this is probably due to too many requests. Refresh the browser and you're good to go!🤘**
 
 Each keyword can return up to **25 Top** and **25 Rising** related queries.
 _Value is not search volume. It is a score from Google that signals how trending a query is._
@@ -68,7 +69,7 @@ if get_trends:
     if not keywords_input.strip():
         st.warning("Please input at least 1 keyword.")
     else:
-        kw_list = [kw.strip() for kw in keywords_input.strip().split("\n") if kw.strip()]
+        kw_list = [kw.strip().lower() for kw in keywords_input.strip().split("\n") if kw.strip()]
         if len(kw_list) > 5:
             st.error("🚫 This app is restricted to 5 keywords only. Please reduce your input.")
         else:
@@ -143,3 +144,12 @@ if get_trends:
                     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     key="export_xlsx_bottom",
                 )
+
+                # Copy-all code block at the very bottom
+                st.markdown("---")
+                st.subheader("Copy all to clipboard")
+                st.markdown(
+    """Hover to find the copy icon in the top right corner📋"""
+)
+                st.code(all_df.to_csv(index=False), language="text")
+
