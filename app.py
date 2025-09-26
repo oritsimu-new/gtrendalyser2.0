@@ -148,7 +148,7 @@ if get_trends:
                             time.sleep(current_delay)
                         else:
                             st.error("Failed to fetch data after multiple retries due to rate limiting (429). Please wait 5-10 minutes and try again.")
-                            return # Stop execution
+                            st.stop() # Use st.stop() instead of return
 
                     except Exception as e:
                         # Catch other general exceptions (e.g., connection reset, DNS issues, general timeouts)
@@ -157,7 +157,7 @@ if get_trends:
                             time.sleep(current_delay)
                         else:
                             st.error(f"Failed to fetch data after multiple retries due to an unexpected error: {type(e).__name__} - {e}. Please try again.")
-                            return # Stop execution
+                            st.stop() # Use st.stop() instead of return
             
             if related_queries:
                 st.success(f"Showing results for: {', '.join(kw_list)}")
