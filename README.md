@@ -1,7 +1,7 @@
 # The G-Trendalyser 2.0 🐍🔥
 
-The G-Trendalyser 2.0 is a web app that allows you to get up to 125 trending keywords from an input of just 5! It is a Streamlit app that uses the PyTrends library to fetch Top and Rising related keyword trends from Google Trends. 
-<br>Built by **Orit Mutznik**, fixed by AI. Follow me on **[@OritSiMu on X](https://x.com/OritSiMu)** and **[LinkedIn](https://www.linkedin.com/in/oritsimu/)**.
+The G-Trendalyser 2.0 is a web app that allows you to get up to 125 trending keywords from an input of just 5! The app fetches Top and Rising related keyword trends from Google Trends. 
+<br>This is a Streamlit app that uses the PyTrends Python library. Built by **Orit Mutznik**, fixed by AI. Follow me on **[@OritSiMu on X](https://x.com/OritSiMu)** and **[LinkedIn](https://www.linkedin.com/in/oritsimu/)**.
 
 ## App description and functionality
 
