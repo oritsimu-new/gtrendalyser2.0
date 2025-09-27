@@ -3,6 +3,7 @@
 The G-Trendalyser 2.0 is a web app that can fetch you up to 125 Top and Rising related keyword trends from Google Trends from an input of 5 keywords!
 <br>Built by **Orit Mutznik** on Streamlit using the Python PyTrends library (pre AI, pre Google Trends API), fixed and enhanced by AI. 
 <br>Follow me on **[@OritSiMu on X](https://x.com/OritSiMu)** and **[LinkedIn](https://www.linkedin.com/in/oritsimu/)**.
+<br>Please note that my old oritsimu GitHub Repo has been depracated following permanent loss of access. Find all the relevant information on **[@oritsimu-new on GitHub](https://github.com/oritsimu-new/)**
 
 ## App description and functionality
 
