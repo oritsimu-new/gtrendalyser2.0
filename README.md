@@ -1,22 +1,48 @@
-The <a href="https://gtrendalyser2.streamlit.app/" target="_blank" rel="noopener noreferrer">
-  G-Trendaliser 2.0
-</a>
- is a Streamlit App that connects to the PyTrends library to get the Top & Rising Related Keyword trends from Google Trends by Orit Mutznik @OritSiMu on <a href="https://x.com/OritSiMu" target="_blank" rel="noopener noreferrer">
-  Twitter (X)
-</a>
- and <a href="https://www.linkedin.com/in/oritsimu/" target="_blank" rel="noopener noreferrer">
-  Linkedin
-</a>
-. Google Trends - Rising & Top + all related terms.
+# The G-Trendalyser 2.0 🐍🔥
 
-To use the tool, you input your 5 keywords of choice (API Limit, meaning you might run into 429 too many requests response), pick the geo (start typing to find it faster) & timeframe and... Presto! All the related kws trends - breakouts included so this can get you up to 25 related keywords per input kw (if that info is available) and you can download all terms to CSV, XSLX or copy all.
+The G-Trendalyser 2.0 is a web app that allows you to get up to 125 trending keywords from an input of just 5! It is a Streamlit app that uses the PyTrends library to fetch Top and Rising related keyword trends from Google Trends. 
+<br>Built by **Orit Mutznik**, fixed by AI. Follow me on **[@OritSiMu on X](https://x.com/OritSiMu)** and **[LinkedIn](https://www.linkedin.com/in/oritsimu/)**.
 
-This app has been built in python using Streamlit, originally by me, broken and then fixed with AI. and it's public here.
+## App description and functionality
 
-It's an evolution of my original <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-  Google Trends Analyser Colab
-</a>, which is still very useful if you want always run the same kws every time.
-Contact me on LinkedIn or Twitter for any questions or feedback. My WIP website is <a href="https://www.oritmutznik.com/" target="_blank" rel="noopener noreferrer">
-  oritmutznik.com
-</a>
+* Paste up to 5 keywords - one per line
+* Pick your country (start typing to search) and timeframe
+* Hit **Get Trevnds** 🤘
+* View Top and Rising related queries for each keyword - up to 25 per list when available
+* Export to **CSV** or **XLSX**, or **copy all** to clipboard
 
+**Notes**
+
+* The **value** is not search volume - it is a Google Trends score.
+* **Breakout** indicates very high growth.
+
+## Light use
+
+Use the hosted app: **[gtrendalyser2.streamlit.app](https://gtrendalyser2.streamlit.app/)**. The app includes exponential logic to handle temporary rate limits.
+
+> ⚠️ **Important - strategy for heavy users and internal stability**
+> This app relies on the unofficial **pytrends** library. Google enforces strict, undisclosed rate limits that can trigger HTTP 429 "too many requests" errors. On shared hosts like Streamlit Community Cloud, heavy usage by others can exhaust the shared IP quota and block everyone.
+>
+> For stable, uninterrupted use under heavy load, **deploy your own copy** so it runs on a separate resource pool with its own quota.
+
+## Deployment steps for independent stability
+
+1. **Fork the repo** on GitHub.
+2. **Create a Streamlit Community Cloud** account and link your GitHub.
+3. **Deploy your fork**: New app → select your fork → set the entrypoint to `app.py`.
+4. Your personal deployment runs with its own limits - ideal for internal teams and intensive analysis.
+
+## Contact
+
+Questions or feedback? Reach out on **[LinkedIn](https://www.linkedin.com/in/oritsimu/)** or **[@OritSiMu on X](https://x.com/OritSiMu)**. WIP site: **[oritmutznik.com](https://www.oritmutznik.com/)**.
+
+---
+
+<details>
+<summary><strong>Why fork and self-host</strong> - optional deep dive</summary>
+
+* Shared IPs can hit 429 rate limits under heavy use
+* Your own deploy isolates your quota and avoids noisy neighbors
+* You keep control of updates and environment
+
+</details>
