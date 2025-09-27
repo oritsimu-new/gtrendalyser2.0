@@ -1,7 +1,6 @@
 # The G-Trendalyser 2.0 🐍🔥
 
-The G-Trendalyser 2.0 is a web app that allows you to get up to 125 trending keywords from an input of just 5! The app fetches Top and Rising related keyword trends from Google Trends. 
-<br>This is a Streamlit app that uses the PyTrends Python library. Built by **Orit Mutznik**, fixed by AI. Follow me on **[@OritSiMu on X](https://x.com/OritSiMu)** and **[LinkedIn](https://www.linkedin.com/in/oritsimu/)**.
+The G-Trendalyser 2.0 is a Streamlit app that uses the PyTrends library to fetch Top and Rising related keyword trends from Google Trends. Built by **Orit Mutznik**. Connect with me on **[@OritSiMu on X](https://x.com/OritSiMu)** and **[LinkedIn](https://www.linkedin.com/in/oritsimu/)**.
 
 ## App description and functionality
 
@@ -16,14 +15,17 @@ The G-Trendalyser 2.0 is a web app that allows you to get up to 125 trending key
 * The **value** is not search volume - it is a Google Trends score.
 * **Breakout** indicates very high growth.
 
+## Usage limitations
 ## Light use
 
-Use the hosted app: **[gtrendalyser2.streamlit.app](https://gtrendalyser2.streamlit.app/)**. The app includes exponential logic to handle temporary rate limits.
+Use the publicly hosted app: **[gtrendalyser2.streamlit.app](https://gtrendalyser2.streamlit.app/)**. The app includes exponential backoff to handle temporary rate limits.
 
 > ⚠️ **Important - strategy for heavy users and internal stability**
-> This app relies on the unofficial **pytrends** library. Google enforces strict, undisclosed rate limits that can trigger HTTP 429 "too many requests" errors. On shared hosts like Streamlit Community Cloud, heavy usage by others can exhaust the shared IP quota and block everyone.
+> This app relies on the unofficial **pytrends** library. Google enforces strict, undisclosed rate limits that can trigger HTTP 429 errors. On shared hosts like Streamlit Community Cloud, heavy usage by others can exhaust the shared IP quota and block everyone.
 >
 > For stable, uninterrupted use under heavy load, **deploy your own copy** so it runs on a separate resource pool with its own quota.
+
+## ⚠️More Stable Alternatives
 
 ## Deployment steps for independent stability
 
@@ -31,6 +33,25 @@ Use the hosted app: **[gtrendalyser2.streamlit.app](https://gtrendalyser2.stream
 2. **Create a Streamlit Community Cloud** account and link your GitHub.
 3. **Deploy your fork**: New app → select your fork → set the entrypoint to `app.py`.
 4. Your personal deployment runs with its own limits - ideal for internal teams and intensive analysis.
+
+## Local usage (highest stability)
+
+If you want the absolute highest stability, run the app directly on your machine or an isolated server:
+
+1. **Download** - get the `app.py` and `requirements.txt` files from the repository.
+2. **Install** - ensure you have Python installed, then install the required libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. **Run Streamlit** - navigate to the folder containing `app.py` in your terminal and run:
+
+```bash
+streamlit run app.py
+```
+
+Your personal deployment runs on a separate resource pool with its own rate limit quota, ensuring maximum stability for heavy analysis and internal teams.
 
 ## Contact
 
